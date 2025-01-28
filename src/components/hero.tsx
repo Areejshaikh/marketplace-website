@@ -4,7 +4,7 @@ import Counter from './counter';
 
 function Hero() {
   return (
-    <section className="grid bg-opacity-30 px-4 md:grid-cols-2 mx-auto w-full max-w-screen-xl bg-image py-24 my-2 overflow-x-hidden">
+    <section className="grid bg-opacity-30 px-4 md:grid-cols-2 mx-auto w-full max-w-screen-xl bg-image pt-24 my-2 overflow-x-hidden">
       <div>
         <div>
           <h3 className="animate-fedeIn opacity-100 transition-opacity duration-900 ease-in-out text-4xl lg:text-[64px] lg:leading-[64px] mb-5 lg:mb-8 font-extrabold">
@@ -26,7 +26,7 @@ function Hero() {
           alt="Hero Image"
           width={1000}
           height={1000}
-          className="opacity-100 justify-center max-w-full h-auto md:hidden"
+          className="opacity-100 justify-center max-w-full h-auto block md:hidden"
         />
         <div className="gap-3 flex flex-wrap items-center justify-between my-24 mx-auto w-full max-w-screen-xl px-4">
           <div>

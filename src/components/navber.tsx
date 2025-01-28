@@ -6,8 +6,6 @@ import { CiSearch } from "react-icons/ci";
 import { BsCart3, BsPerson } from "react-icons/bs";
 import Link from "next/link";
 import { useAppSelector } from "@/app/store/hooks";
-import cart from "@/app/store/features/cart";
-import LoginForm from "@/app/login/page";
 
 const Navber = () => {
   const cart = useAppSelector((state) => state.cart) 
@@ -28,10 +26,10 @@ const Navber = () => {
                   <summary>Shop</summary>
                  <Link href="/sign-in">
                  <ul className="p-2 hover:text-myred">
-                    <li><Link href='/woman'>woman's Cloths</Link></li>
-                    <li><Link href='/man'>Man's Cloths</Link></li>
+                    <li><Link href='/woman'>woman&apos;s Cloths</Link></li>
+                    <li><Link href='/man'>Man&apos;s Cloths</Link></li>
                     <li><Link href='/shoe'>Shoe And Bags</Link></li>
-                    <li><Link href='/kid'>Kid's Clothes</Link></li>
+                    <li><Link href='/kid'>Kid&apos;s Clothes</Link></li>
                   </ul></Link>
                 </details>
               </li>

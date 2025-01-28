@@ -4,7 +4,7 @@ export type Product = {
     name: string,
     price: number,
     description: string,
-    imageUrl: string[] | string | StaticImageData | undefined | any,
+    imageUrl: string[] | string | StaticImageData,
     slug:{
         _type:"slug";
         current: "string";
@@ -23,7 +23,7 @@ export type cart = {
     name: string,
     price: number,
     description: string,
-    image: string[] | string | StaticImageData | undefined | any,
+    image: string[] | string | StaticImageData,
     category: string,
     discountPercent: number,
     new: boolean,

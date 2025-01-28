@@ -74,7 +74,7 @@ export default function OurCustomer() {
 
 
 
-    var settings = {
+    let settings = {
         dots: true,
         infinite: false,
         speed: 500,
