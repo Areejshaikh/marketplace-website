@@ -8,7 +8,7 @@ import { useAppSelector } from "../store/hooks";
 export default function CartPage() {
 
     const cartArray = useAppSelector((state) => state.cart)
-    const total = cartArray.reduce((total: number, arr: any) => {
+    const total = cartArray.reduce((total: number, arr: { price: number; discountPercent: number; quantity: number }) => {
         return (total +( (arr.price - (arr.price * arr.discountPercent) / 100)) * arr.quantity);
     }, 0);
 

@@ -3,7 +3,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { productSlice } from './features/product'
 import { cartSlice } from './features/cart'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-import { persistStore, persistReducer } from 'redux-persist'
+import {  persistReducer } from 'redux-persist'
 const persistConfig = {
   key: 'root',
   version: 1,

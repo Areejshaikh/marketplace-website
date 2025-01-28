@@ -15,7 +15,7 @@ interface Ireviws {
     content: string;
     date: string;
 }
-const reviws: Ireviws[] = [
+let reviws: Ireviws[] = [
     {
         id: '1',
         title: "Samantha D.",

@@ -68,7 +68,7 @@ export const cartSlice = createSlice({
   },
 })
 
-export const { addToCart, deleteItem, addCart ,lessCart } = cartSlice.actions
+export let { addToCart, deleteItem, addCart ,lessCart } = cartSlice.actions
 
 
 
