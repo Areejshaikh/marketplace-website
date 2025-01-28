@@ -12,7 +12,11 @@ import { Button } from './ui/button';
 
 
 
-const AddToCartTost = ({ cartItem }: any) => {
+interface AddToCartTostProps {
+    cartItem: any; // Replace 'any' with the appropriate type if known
+}
+
+const AddToCartTost: React.FC<AddToCartTostProps> = ({ cartItem }) => {
     const dispatch = useAppDispatch();
 
 
@@ -32,13 +36,6 @@ const AddToCartTost = ({ cartItem }: any) => {
     return (
         <>
             <div onClick={() => dispatch(addToCart(cartItem))}>
-                {/* <button
-                    onClick={notify}
-                    className=" py-4 px-24 rounded-full shadow-lg bg-black text-white
-                   hover:text-black hover:bg-white duration-500 ">
-                    Add To Cart
-                </button> */}
-
                 <Button onClick={notify} className=" py-6 px-20 rounded-full shadow-lg bg-black text-white
                    hover:text-black hover:bg-white duration-500 ">
                     Add To Cart</Button>

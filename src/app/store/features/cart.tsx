@@ -14,8 +14,8 @@ export const cartSlice = createSlice({
   reducers: {
     // Add to cart functionallty  State
     addToCart(state, action) {
-      let uniqueId = Math.floor(1000 + Math.random() * 9000);
-      let newobj = { ...action.payload, uniqueId }
+      const uniqueId = Math.floor(1000 + Math.random() * 9000);
+      const newobj = { ...action.payload, uniqueId }
       state.push(newobj)
     },
 
@@ -23,7 +23,7 @@ export const cartSlice = createSlice({
     
    
   deleteItem(state, { payload }) {
-    return state.filter((val) => val.uuid !== payload);
+    return state.filter((val) => val._id !== payload);
   },
     
     // Add to Cart
@@ -68,7 +68,7 @@ export const cartSlice = createSlice({
   },
 })
 
-export let { addToCart, deleteItem, addCart ,lessCart } = cartSlice.actions
+export const { addToCart, deleteItem, addCart ,lessCart } = cartSlice.actions
 
 
 

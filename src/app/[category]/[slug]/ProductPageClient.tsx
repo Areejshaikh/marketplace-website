@@ -87,7 +87,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                     {/* Colors */}
                     <div className="flex items-center mb-6">
                         <span className="font-medium mr-2">Color:</span>
-                        {cartItems.colors.map((item: any, i: any) => (
+                        {cartItems.colors.map((item: string, i: number) => (
                             <button
                                 key={i}
                                 onClick={() => setCartItem({ ...cartItems, colors: [item] })}

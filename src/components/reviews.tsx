@@ -15,7 +15,7 @@ interface Ireviws {
     content: string;
     date: string;
 }
-let reviws: Ireviws[] = [
+const reviws: Ireviws[] = [
     {
         id: '1',
         title: "Samantha D.",
@@ -74,7 +74,7 @@ export default function OurCustomer() {
 
 
 
-    let settings = {
+    const settings = {
         dots: true,
         infinite: false,
         speed: 500,
