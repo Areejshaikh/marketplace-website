@@ -21,16 +21,16 @@ export default function CategoryPage() {
 
 
     return (
-        <section className="flex max-w-screen-xl gap-12 sm-gap-0 mx-auto my-24">
+        <section className="flex max-w-screen-xl gap-12  sm-gap-0 mx-auto my-24">
             <LeftSideData />
-            <div className="max-w-screen-xl container mx-auto py-24 gap-6 grid grid-cols-1 md:grid-cols-3">
+            <div className=" container mx-auto overflow-x-hidden py-24 gap-6 grid grid-cols-1 md:grid-cols-3">
                 {productslist.map((product) => {
                     return (
                         <div key={product._id}
                             className="mx-8 md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
 
 
-                            <div className=" rounded-md w-[240px] h-[240px] group mb-4 object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
+                            <div className=" rounded-2xl w-[240px] h-[240px] group mb-4 object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
                                 <Link href={`/${product.category}/${product.slug.current}`} >
                                     {/* Display product image */}
                                     <Image
@@ -38,7 +38,7 @@ export default function CategoryPage() {
                                         alt={product.name}
                                         width={140}
                                         height={94}
-                                        className=" rounded-md transition-all duration-300 group-hover:brightness-50 group-hover:shadow-lg group-hover:shadow-black w-[240px] h-[240px]  mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6"
+                                        className=" rounded-2xl transition-all duration-300 group-hover:brightness-50 group-hover:shadow-lg group-hover:shadow-black w-[240px] h-[240px]  mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6"
                                     />
                                 </Link>
                             </div>

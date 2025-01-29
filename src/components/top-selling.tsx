@@ -68,7 +68,7 @@ export default function TopSelling() {
                             className="mx-auto max-w-screen-2xl">
 
 
-                            <div className=" rounded-md w-[240px] h-[240px]  group mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
+                            <div className=" rounded-2xl w-[240px] h-[240px]  group mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
                                 <Link href={`/${product.category}/${product.slug.current}`} >
                                     {/* Display product image */}
                                     <Image
@@ -76,7 +76,7 @@ export default function TopSelling() {
                                         alt={product.name}
                                         width={140}
                                         height={94}
-                                        className=" rounded-md transition-all duration-300 group-hover:brightness-50 group-hover:shadow-lg group-hover:shadow-black w-[240px] h-[240px]  mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6"
+                                        className=" rounded-2xl transition-all duration-300 group-hover:brightness-50 group-hover:shadow-lg group-hover:shadow-black w-[240px] h-[240px]  mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6"
                                     />
                                 </Link>
                             </div>

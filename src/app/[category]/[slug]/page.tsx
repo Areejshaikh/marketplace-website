@@ -7,7 +7,7 @@ interface PageProps {
   params: { slug: string };
 }
 
-async function getProduct(slug: string) {
+async function getProduct({params}: PageProps) {
   return client.fetch(
     groq`*[_type == "products" && slug.current == $slug][0] {
       _id,
@@ -24,12 +24,12 @@ async function getProduct(slug: string) {
       rating,
       quantity,
     }`,
-    { slug }
+    { slug: params.slug }
   );
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const product = await getProduct(params.slug);
+  const product = await getProduct({ params });
 
   return <ProductPageClient product={product} />;
 }
