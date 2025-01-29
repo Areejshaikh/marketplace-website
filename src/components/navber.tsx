@@ -11,7 +11,7 @@ const Navber = () => {
   const cart = useAppSelector((state) => state.cart) 
   return (
     <nav>
-      <div className="fixed z-20 navbar bg-base-100 max-w-screen-xl right-0 left-0 top-0 mx-auto p-4 ">
+      <div className="fixed z-20 flex navbar bg-base-100 max-w-screen-2xl right-0 left-0 top-0 mx-auto p-4">
         <div className="navbar-start">
           <div className="dropdown ">
             <div tabIndex={0} role="button"
@@ -24,13 +24,12 @@ const Navber = () => {
               <li>
                 <details>
                   <summary>Shop</summary>
-                 <Link href="/sign-in">
-                 <ul className="p-2 hover:text-myred">
-                    <li><Link href='/woman'>woman&apos;s Cloths</Link></li>
-                    <li><Link href='/man'>Man&apos;s Cloths</Link></li>
+                  <ul className="p-2 hover:text-myred">
+                    <li><Link href='/woman'>woman's Cloths</Link></li>
+                    <li><Link href='/man'>Man's Cloths</Link></li>
                     <li><Link href='/shoe'>Shoe And Bags</Link></li>
-                    <li><Link href='/kid'>Kid&apos;s Clothes</Link></li>
-                  </ul></Link>
+                    <li><Link href='/kid'>Kid's Clothes</Link></li>
+                  </ul>
                 </details>
               </li>
               <li><Link href='/arival'>New Arrival</Link></li>
@@ -49,7 +48,7 @@ const Navber = () => {
           <input
             type="text"
             placeholder="What are you looking for?"
-            className="rounded-full pl-12 w-[340px]  ml-8 h-10 bg-gray-200 placeholder:text-sm text-sm"
+            className="rounded-full pl-12 w-[430px]  ml-8 h-10 bg-gray-200 placeholder:text-sm text-sm"
           />
         </div>
 
@@ -59,9 +58,7 @@ const Navber = () => {
             </button>
             <button className="btn btn-ghost btn-circle">
               <div className="indicator">
-               <Link href={'/login'}> <BsPerson className="h-6 w-6" />
-              
-               </Link>
+                <BsPerson className="h-6 w-6" />
               </div>
             </button>
           <div className="flex-none">
@@ -69,18 +66,18 @@ const Navber = () => {
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                 <div className="indicator">
                   <BsCart3  className="h-5 w-5 hover:text-myred:"/>
-                 { cart.length > 0  &&(
-                  <span className="badge badge-sm indicator-item group-hover:text-white ">
-                  {cart.length}
-                     </span>
-                 )} 
+                  
+                 {cart.length > 1 && (
+                   <span className="badge badge-sm indicator-item group-hover:text-white ">
+                   {cart.length}
+                      </span>
+                 )}
+                   
                 </div>
               </div>
               </Link>
           </div>
         </div>
-
-        
       </div>
     </nav>
 
