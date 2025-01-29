@@ -38,7 +38,7 @@ export const cartSlice = createSlice({
       if (obj) {
         ++obj.quantity;
         let newState = state.filter
-        ((val) => val._id !== obj?._id);
+        ((val) => val.uuid !== obj?._id);
         state = [...newState, obj]
         return;
       }

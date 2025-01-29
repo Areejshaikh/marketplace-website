@@ -52,11 +52,9 @@ export default function LeftSideCart() {
                                         </div>
                                     </div>
                                     <div className="md:w-[225px] md:h-[124px] w-[115px] h-[99px] relative flex mt-12 md:mt-0 items-end justify-end">
-                                        {/* <div onClick={() => dispatch(deleteItem(item.uuid))} className="absolute right-4 mb-24 top-0 text-2xl text-red-500 cursor-pointer">
-                                            < RiDeleteBin6Line onClick={() => dispatch(deleteItem(item.uuid))} />
-                                        </div> */}
+                                        
                                           <div className="absolute right-4 top-0 text-2xl text-red-500 cursor-pointer">
-                                            < RiDeleteBin6Line onClick={() => dispatch(deleteItem(item._id))} />
+                                            < RiDeleteBin6Line onClick={() => dispatch(deleteItem(item.uuid))} />
                                         </div>
                                        {/* Increment Decrement Button */}
                                         <div className="absolute text-center flex justify-center bg-slate-200  w-[120px] md:w-[146px] h-[44px] items-center  rounded-full" >

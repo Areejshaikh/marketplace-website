@@ -59,8 +59,8 @@ const Navber = () => {
             </button>
             <button className="btn btn-ghost btn-circle">
               <div className="indicator">
-               <Link href={'/login'}> <BsPerson className="h-6 w-6" />
-              
+               <Link href='/contact-form'>
+               <BsPerson className="h-6 w-6" />
                </Link>
               </div>
             </button>

@@ -71,7 +71,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                     <div className="flex items-center gap-4 mb-6">
                         <p
                             className={`text-lg font-medium ${
-                                cartItems.discountPercent > 0 ? "line-through text-gray-500" : "text-maincolor"
+                                cartItems.discountPercent > 0 ? " decoration-red-500 line-through text-gray-500" : "text-maincolor"
                             }`}
                         >
                             ${cartItems.price * cartItems.quantity}
