@@ -1,77 +1,47 @@
-// import { client } from "@/sanity/lib/client";
-// import { groq } from "next-sanity";
-// import ProductPageClient from "./ProductPageClient";
-// // fetch data From sanity
-// interface ProductPageProps {
-//   params : Promise<{slug: string}>
-// }
-// async function getProduct(slug: string ): Promise<Product> {
-//   return client.fetch(
-//     groq`*[_type == "products" && slug.current == $slug][0] {
-//       _id,
-//       name,
-//       price,
-//       description,
-//       "imageUrl": image.asset->url,
-//       category,
-//       slug,
-//       discountPercent,
-//       new,
-//       colors,
-//       sizes,
-//       rating,
-//       quantity,
-//     }`,
-//     { slug }
-//   );
-// }
-// export default async function ProductPage({ params }: ProductPageProps) {
-//   const { slug } = await params;
-//   const product = await getProduct(params.slug);
+"use client";
 
-//   return <ProductPageClient product={product} />;
-// }
-
-
-
-
-
-
+import { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 import ProductPageClient from "./ProductPageClient";
-import { Product } from "@/utils/type"; // Ensure this is correct
+import { Product } from "@/components/utils/types";
 
 interface ProductPageProps {
   params: { slug: string };
 }
 
-async function getProduct(slug: string): Promise<Product> {
-  return client.fetch(
-    groq`*[_type == "products" && slug.current == $slug][0] {
-      _id,
-      name,
-      price,
-      description,
-      "imageUrl": image.asset->url,
-      category,
-      slug,
-      discountPercent,
-      new,
-      colors,
-      sizes,
-      rating,
-      quantity,
-    }`,
-    { slug }
-  );
-}
+export default function ProductPage({ params }: ProductPageProps) {
+  const [product, setProduct] = useState<Product | null>(null);
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = params;
-  const product = await getProduct(slug);
+  useEffect(() => {
+    async function fetchProduct() {
+      const data = await client.fetch(
+        groq`*[_type == "products" && slug.current == $slug][0] {
+          _id,
+          name,
+          price,
+          description,
+          "imageUrl": image.asset->url,
+          category,
+          slug,
+          discountPercent,
+          new,
+          colors,
+          sizes,
+          rating,
+          quantity,
+        }`,
+        { slug: params.slug }
+      );
+      setProduct(data);
+    }
+
+    fetchProduct();
+  }, [params.slug]);
+
+  if (!product) {
+    return <p className="text-center text-gray-500">Loading...</p>;
+  }
 
   return <ProductPageClient product={product} />;
 }
-
-
