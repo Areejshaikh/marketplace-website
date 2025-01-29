@@ -19,7 +19,8 @@ import { client } from "@/sanity/lib/client"
 
 const formSchema = z.object({
     firstName: z.string().min(1).max(50),
-    email: z.string().email()
+    email: z.string().email(),
+    message: z.string().min(10).max(500)
 })
 
 type FormType = z.infer<typeof formSchema>
