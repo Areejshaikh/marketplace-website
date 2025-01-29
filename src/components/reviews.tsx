@@ -113,7 +113,7 @@ export default function OurCustomer() {
         ]
     };
     return (
-        <section className="mx-auto max-w-screen-xl my-24 rounded-3xl">
+        <section className="mx-auto max-w-screen-xl my-24 overflow-hidden rounded-3xl">
             <div className=" flex justify-between mx-6">
                 {/* Heading and Timer */}
                 <h2 className="text-[16px] capitalize  md:text-[44px] lg:w-[654px] w-[250px] font-extrabold leading-[48px] tracking-[4%]">
@@ -128,8 +128,8 @@ export default function OurCustomer() {
                 </div>
                 {/* Button */}
             </div>
-            <div className=" max-w-screen-2xl mx-auto rounded-3xl gap-5 ">
-                <Slider {...settings} className="gap-x-4">
+            <div className=" max-w-screen-2xl mx-auto overflow-hidden rounded-3xl gap-5 ">
+                <Slider {...settings} className="">
                     {
                         reviws.map((r,i) => (
 

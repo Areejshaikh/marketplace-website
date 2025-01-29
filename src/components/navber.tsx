@@ -11,7 +11,7 @@ const Navber = () => {
   const cart = useAppSelector((state) => state.cart) 
   return (
     <nav>
-      <div className="fixed z-20 flex navbar bg-base-100 max-w-screen-2xl right-0 left-0 top-0 mx-auto p-4">
+      <div className="fixed z-20 flex navbar bg-base-100 max-w-screen-xl right-0 left-0 top-0 mx-auto p-4">
         <div className="navbar-start">
           <div className="dropdown ">
             <div tabIndex={0} role="button"

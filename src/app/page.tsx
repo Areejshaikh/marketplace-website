@@ -11,14 +11,14 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <HeroButtom/>
+       <HeroButtom/>
       <Suspense>
       <Arrival />
       </Suspense>
       <Suspense>
       <TopSelling />
       </Suspense>
-      <Browser />
+      <Browser /> 
       <OurCustomer />
     </div>
   )

@@ -57,11 +57,11 @@ export default function TopSelling() {
     };
 
     return ( 
-        <div className="w-full max-w-screen-xl mx-auto bg-gray-100 mb-0 mt-24 overflow-x-hidden">
+        <div className="w-full max-w-screen-xl mx-auto bg-gray-100 mb-0 mt-24 overflow-hidden">
             <h2 className="text-center capitalize py-8 text-[48px] text- font-bold leading-[48px] tracking-[4%]">
                 Top Selling Items
             </h2>
-            <Slider {...settings} className="gap-x-4">
+            <Slider {...settings} className="ml-10">
                 {productslist.slice(2, 8).map((product) => {
                     return (
                         <div key={product._id}

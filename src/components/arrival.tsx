@@ -57,12 +57,12 @@ export default function ArrivalProps() {
     };
 
     return (
-        <div className="mb-0 mt-24 w-full max-w-screen-xl mx-auto bg-gray-100 overflow-x-hidden 
+        <div className="mb-0 mt-24 w-full max-w-screen-xl mx-auto bg-gray-100 overflow-hidden 
 ">
             <h2 className="text-center  capitalize py-8 text-[48px] text- font-bold leading-[48px] tracking-[4%]">
                 New Arrival
             </h2>
-            <Slider {...settings} className="mx-auto">
+            <Slider {...settings} className="mx-auto ml-10">
                 {productslist.slice(5, 8).map((product) => {
                     return (
                         <div key={product._id}
