@@ -3,8 +3,10 @@ import { groq } from "next-sanity";
 import ProductPageClient from "./ProductPageClient";
 
 // fetch data From sanity
-
-async function getProduct(slug: string) {
+interface ProductPageClientProps {
+  params : Promise<{slug: string}>
+}
+async function getProduct(slug: string ): Promise<Product> {
   return client.fetch(
     groq`*[_type == "products" && slug.current == $slug][0] {
       _id,
@@ -25,7 +27,8 @@ async function getProduct(slug: string) {
   );
 }
 
-export default async function ProductPage({ params }: { params: { slug: string } }) {
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { slug } = await params;
   const product = await getProduct(params.slug);
 
   return <ProductPageClient product={product} />;
