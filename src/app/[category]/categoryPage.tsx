@@ -17,19 +17,15 @@ export default function CategoryPage() {
         };
         getProducts();
     }, []);
-
-
-
     return (
         <section className="flex max-w-screen-xl gap-12  sm-gap-0 mx-auto my-24">
             <LeftSideData />
             <div className=" container mx-auto overflow-x-hidden py-24 gap-6 grid grid-cols-1 md:grid-cols-3">
+               {/* Fetch Data */}
                 {productslist.map((product) => {
                     return (
                         <div key={product._id}
                             className="mx-8 md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
-
-
                             <div className=" rounded-2xl w-[240px] h-[240px] group mb-4 object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
                                 <Link href={`/${product.category}/${product.slug.current}`} >
                                     {/* Display product image */}
@@ -59,8 +55,6 @@ export default function CategoryPage() {
                                             {product.rating}
                                         </span>
                                     </div>
-
-
                                     <div className=" h-[36px] text-center flex gap-4">
                                         <p className={`text-base leading-6 font-medium text-maincolor  
                              ${product.discountPercent > 0 &&
@@ -71,22 +65,14 @@ export default function CategoryPage() {
                                                 ${(product.price - (product.price * product.discountPercent) / 100) * product.quantity}
                                             </p>
                                         )}
-
-
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
                     )
                 })}
-
-
             </div>
-
         </section>
-
     );
 }
 

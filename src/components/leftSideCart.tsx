@@ -21,7 +21,7 @@ export default function LeftSideCart() {
                                  */}
                                 <div>
                                     <Image
-                                        src={urlFor(item.image).url()} 
+                                        src={urlFor(item.image).url()}
                                         alt={item.name}
                                         width={140}
                                         height={94}
@@ -38,7 +38,7 @@ export default function LeftSideCart() {
 
                                         <p>Color:<span className="text-gray-400 my-8">{item.colors[0]}</span></p>
                                         {/* Price  ,Discount*/}
-                                       
+
                                         <div className="flex items-center ">
                                             <p className={`text-base leading-6 font-medium text-maincolor ${item.discountPercent > 0 &&
                                                 "line-through decoration-2 decoration-red-500"} `} >
@@ -52,20 +52,22 @@ export default function LeftSideCart() {
                                         </div>
                                     </div>
                                     <div className="md:w-[225px] md:h-[124px] w-[115px] h-[99px] relative flex mt-12 md:mt-0 items-end justify-end">
-                                        
-                                          <div className="absolute right-4 top-0 text-2xl text-red-500 cursor-pointer">
+
+                                        <div className="absolute right-4 top-0 text-2xl text-red-500 cursor-pointer">
                                             < RiDeleteBin6Line onClick={() => dispatch(deleteItem(item.uuid))} />
                                         </div>
-                                       {/* Increment Decrement Button */}
+                                        {/* Increment Decrement Button */}
                                         <div className="absolute text-center flex justify-center bg-slate-200  w-[120px] md:w-[146px] h-[44px] items-center  rounded-full" >
                                             <button
+                                                onClick={() => dispatch(addCart(item))}
                                                 className="hover:text-myred duration-600">
-                                                <FaPlus onClick={() => dispatch(addCart(item))} />
+                                                <FaPlus/>
                                             </button>
                                             <span className="w-6 h-6 px-8">{item.quantity}</span>
                                             <button
+                                            onClick={() => dispatch(lessCart(item))}
                                                 className="hover:text-myred duration-600">
-                                                <FaMinus onClick={() => dispatch(lessCart(item))} />
+                                                <FaMinus/>
                                             </button>
                                         </div>
                                     </div>

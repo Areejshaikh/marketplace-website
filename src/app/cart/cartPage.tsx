@@ -1,6 +1,5 @@
 'use client'
 import Link from "next/link";
-import { HiChevronRight } from "react-icons/hi2";
 import { CiShoppingTag } from "react-icons/ci";
 import LeftSideCart from "@/components/leftSideCart";
 import { useAppSelector } from "../store/hooks";
@@ -8,31 +7,34 @@ import { useAppSelector } from "../store/hooks";
 export default function CartPage() {
 
     const cartArray = useAppSelector((state) => state.cart)
+
     const total = cartArray.reduce((total: number, arr: { price: number; discountPercent: number; quantity: number }) => {
-        return (total +( (arr.price - (arr.price * arr.discountPercent) / 100)) * arr.quantity);
+        return (total + (arr.price - (arr.price * arr.discountPercent) / 100) * arr.quantity);
     }, 0);
 
 
     const calculateTotalDiscount = (cartArray: { price: number; discountPercent: number; quantity: number }[]): number =>
         cartArray.reduce((total, item) => total + ((item.price * item.discountPercent) / 100) * item.quantity, 0);
-    
+
     // // Example usage:
     const totalDiscount = calculateTotalDiscount(cartArray);
-    
+
     return (
         <section id="cart" className="max-w-screen-xl mx-auto mt-24">
-          
-            <div className="hidden text-gray-800 md:flex justify-left pl-12 text-center">
-                <Link className="text-sm" href="/">Home</Link>
-                <span className="px-4  text-xl">
 
-                    <HiChevronRight /> </span>
-                <Link className="text-sm" href="/">Card</Link>
+            <div className="breadcrumbs text-sm">
+                <ul>
+                    <li>
+                        <Link href={'/'}>Home</Link>
+                    </li>
+                    <li><Link href={'/categories'}>Categories</Link></li>
+                    <li>Cart</li>
+                </ul>
             </div>
             <div className=" max:w-sreen-xl  mx-auto md-space-x-24 grid grid-cols-1 md:grid-cols-2 gap-44">
 
                 <div>
-                    <LeftSideCart/>                
+                    <LeftSideCart />
                 </div>
                 <div className="my-12  md:w-[505px] md:h-[458px] w-[360px] h-[390px] mt-20 border border-gray-1 rounded-3xl py-2 px-4 md:space-y-8 ">
                     <span className="text-2xl font-bold  ">Order Summary</span>
@@ -73,11 +75,11 @@ export default function CartPage() {
 
                     <div className="md:w-[457px] md:h-[60px] w-[318px] h-[54px] ">
                         <div className="md:w-[457px] md:h-[48px] w-[318px] h-[48px]  flex justify-between">
-                            <Link href={'https://buy.stripe.com/test_00g8x2b0cgxw8ms001'} className="w-full md:w-38 pt-[10px]
+                            <Link href='/stripe-payment' className="w-full md:w-38 pt-[10px]
                               inline-block text-center bg-black hover:bg-black/80 
                               transition-all text-white py- rounded-full hover:animate-pulse">
                                 Go to Checkout
-                                </Link>
+                            </Link>
                         </div>
                     </div>
                 </div>

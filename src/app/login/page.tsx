@@ -17,6 +17,7 @@ import { client } from "@/sanity/lib/client"
 
 
 
+
 const formSchema = z.object({
     firstName: z.string().min(1).max(50),
     email: z.string().email(),
@@ -39,7 +40,7 @@ const ContactForm = () => {
             email: values.email
         })
     }
-  
+
 
 
     return (
@@ -76,7 +77,7 @@ const ContactForm = () => {
                     />
 
 
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" >Submit</Button>
                 </form>
             </Form>
         </div>
@@ -84,3 +85,6 @@ const ContactForm = () => {
 }
 
 export default ContactForm
+
+
+

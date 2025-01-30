@@ -149,6 +149,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                     </div>
                 </div>
             </div>
+            
         </section>
     );
 }

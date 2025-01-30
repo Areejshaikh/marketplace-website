@@ -5,8 +5,6 @@ import HeroButtom from "@/components/herobuttom";
 import OurCustomer from "@/components/reviews";
 import TopSelling from "@/components/top-selling";
 import { Suspense } from "react";
-
-
 export default function Home() {
   return (
     <div>

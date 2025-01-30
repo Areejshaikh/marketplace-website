@@ -6,11 +6,16 @@ export default function LeftSideData() {
     return (
 <div>
         <div className="hidden py-4 text-gray-800 md:flex justify-left text-center">
-          <Link className="text-sm" href="/">Home</Link>
-          <span className="px-4  text-xl">
-
-            <HiChevronRight /> </span>
-          <Link className="text-sm" href="/">Shop</Link>
+        <div className="breadcrumbs text-sm">
+        <ul>
+          <li>
+          <Link href={'/'}>Home</Link>
+          </li>
+          <li><Link href={'/cart'}>Cart</Link></li>
+          <li>Categories</li>
+        </ul>
+      </div>
+          
         </div>
         <div className="hidden md:block min-w-[300px]  max-w-[295px] border border-black/10 rounded-[20px] px-5 md:px-6 py-5 space-y-5 md:space-y-6">
           <div className="flex mx-auto justify-between text-center items-center">

@@ -4,6 +4,7 @@ import heroImage from '../../public/assets/hero1.jpeg'
 import Image from "next/image";
 import vector from '../../public/assets/Vector.png'
 import Counter from './counter';
+import { Button } from './ui/button';
 
 
 function Hero() {
@@ -31,8 +32,13 @@ function Hero() {
             height="60"
             className="absolute md:block hidden top-36 sm:top-64 md:top-44 lg:top-60 max-w-11 animate-[spin_3s_infinite] right-[550px]"
           />
+          
         </div>
-       
+        <div>
+            <Button className="px-12 py-4 my-12 rounded-md text-sm font-semibold bg-gray-900 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+              Shop Now
+            </Button>
+  </div>
        
         <Image src={heroImage} alt="Hero Image" width={1000} height={1000} className=" opacity-100 justify-center  w-[400px] h-[448px] md:hidden" />
         <div className="my-8 gap-3 grid-cols-2  grid sm:grid-cols-3 items-center justify-center ">

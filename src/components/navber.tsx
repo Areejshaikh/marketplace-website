@@ -1,11 +1,11 @@
 'use client'
-
 import { NavigationMenuDemo } from "./navlinks";
 import { VscThreeBars } from "react-icons/vsc";
 import { CiSearch } from "react-icons/ci";
 import { BsCart3, BsPerson } from "react-icons/bs";
 import Link from "next/link";
 import { useAppSelector } from "@/app/store/hooks";
+import { ComboboxDemo } from "@/app/combobox";
 
 const Navber = () => {
   const cart = useAppSelector((state) => state.cart) 
@@ -25,7 +25,7 @@ const Navber = () => {
                 <details>
                   <summary>Shop</summary>
                   <ul className="p-2 hover:text-myred">
-                    <li><Link href='/woman'>woman's Cloths</Link></li>
+                    <li><Link href='/woman'>Woman's Cloths</Link></li>
                     <li><Link href='/man'>Man's Cloths</Link></li>
                     <li><Link href='/shoe'>Shoe And Bags</Link></li>
                     <li><Link href='/kid'>Kid's Clothes</Link></li>
@@ -43,31 +43,27 @@ const Navber = () => {
           <NavigationMenuDemo />
         </div>
          {/* Search Bar for Desktop */}
-         <div className="hidden md:block relative w-[243px]">
-          <CiSearch className="w-6 h-6 absolute top-1/2 left-12 transform -translate-y-1/2 text-lg text-gray-400" />
-          <input
-            type="text"
-            placeholder="What are you looking for?"
-            className="rounded-full pl-12 w-[430px]  ml-8 h-10 bg-gray-200 placeholder:text-sm text-sm"
-          />
+         <div className="hidden md:block ml-24 relative w-[243px]">
+          
+          <ComboboxDemo/>
         </div>
 
         <div className="navbar-end">
-            <button className="btn btn-ghost btn-circle block md:hidden">
-              <CiSearch className="h-6 w-6 block md:hidden" />
-            </button>
+           
+            <Link href='/login'>
             <button className="btn btn-ghost btn-circle">
               <div className="indicator">
                 <BsPerson className="h-6 w-6" />
               </div>
             </button>
+            </Link>
           <div className="flex-none">
             <Link href='/cart'>
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                 <div className="indicator">
                   <BsCart3  className="h-5 w-5 hover:text-myred:"/>
                   
-                 {cart.length > 1 && (
+                 {cart.length >= 1 && (
                    <span className="badge badge-sm indicator-item group-hover:text-white ">
                    {cart.length}
                       </span>
