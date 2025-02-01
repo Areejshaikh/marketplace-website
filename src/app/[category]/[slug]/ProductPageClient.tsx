@@ -7,6 +7,8 @@ import { urlFor } from "@/sanity/lib/image";
 import { Product } from "@/components/utils/types";
 import SlugImages from "@/components/slugImage";
 import ProductInfo from "@/components/description";
+import { MarqueeDemoVertical } from "@/components/customer";
+import RelatedProduct from "@/app/related-product/page";
 
 // Props type for ProductPageClient
 interface ProductPageClientProps {
@@ -70,9 +72,8 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                     {/* Product Price and Discount */}
                     <div className="flex items-center gap-4 mb-6">
                         <p
-                            className={`text-lg font-medium ${
-                                cartItems.discountPercent > 0 ? " decoration-red-500 line-through text-gray-500" : "text-maincolor"
-                            }`}
+                            className={`text-lg font-medium ${cartItems.discountPercent > 0 ? " decoration-red-500 line-through text-gray-500" : "text-maincolor"
+                                }`}
                         >
                             ${cartItems.price * cartItems.quantity}
                         </p>
@@ -101,7 +102,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                     <div className="flex items-center mb-6">
                         <span className="font-medium mr-3">Size:</span>
                         <div className="flex gap-2">
-                            {cartItems.sizes.map((size: string ,i: number) => (
+                            {cartItems.sizes.map((size: string, i: number) => (
                                 <button
                                     key={i}
                                     onClick={() => setCartItem({ ...cartItems, sizes: [size] })}
@@ -142,14 +143,18 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                         {/* Add to Cart Button */}
                         <AddToCartTost cartItem={cartItems} />
                     </div>
+                    
+                </div>
+            </div>
+            <RelatedProduct category={`${product.category}`} currentProductId={`${product._id}`} />
+                   
 
                     {/* Product Info */}
                     <div className="mt-6">
                         <ProductInfo />
                     </div>
-                </div>
-            </div>
-            
+                    <MarqueeDemoVertical />
+
         </section>
     );
 }

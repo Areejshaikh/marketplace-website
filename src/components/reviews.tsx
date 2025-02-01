@@ -1,164 +1,109 @@
-'use client'
+import { cn } from "@/lib/utils";
+import { Marquee } from "./ui/marquee";
 
-import { HiStar } from "react-icons/hi2";
-import { FaArrowLeft } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
-import reviews from '../../public/assets/ratingVector2.png'
-import Image from "next/image";
-import Slider from "react-slick";
-
-
-
-interface Ireviws {
-    id: string;
-    title: string;
-    content: string;
-    date: string;
-}
-const reviws: Ireviws[] = [
+const reviews = [
     {
-        id: '1',
-        title: "Samantha D.",
-        content:
-            "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
+        username: "Samantha D.",
+        body: "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
+        img: "/assets/pic1.jpg",
         date: ' Posted on August 14, 2023'
     },
-
     {
-        id: '2',
-        title: "Alex M.",
-        content:
-            "The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being a UI/UX designer myself, I'm quite picky about aesthetics, and this t-shirt definitely gets a thumbs up from me.",
+        username: "Alex M.",
+        body: "The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being a UI/UX designer myself, I'm quite picky about aesthetics, and this t-shirt definitely gets a thumbs up from me.",
+        img: "/assets//pic1.jpg",
         date: "Posted on August 15, 2023"
     },
-
     {
-        id: '3',
-        title: "Jane Doe",
-        content: "This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt.",
-
+        username: "Olivia P.",
+        body: "This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt.",
+        img: "/assets/pic1.jpg",
         date: "Posted on August 16, 2023"
-    },
 
+    },
     {
-        id: '4',
-        title: "Olivia P.",
-        content: "As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out.",
+        username: "Liam K.",
+        body: "As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out.",
+        img: "/assets/pic1.jpg",
         date: "Posted on August 17, 2023"
     },
-
     {
-        id: '5',
-        title: "Liam K.",
-        content: "This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion.",
-
+        username: "Willim j.",
+        body: "This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion.",
+        img: "/assets/pic1.jpg",
         date: "Posted on August 18, 2023"
+
     },
-
     {
-        id: '6',
-        title: "Ava H",
-        content:
-            "I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter.",
-
+        username: "Ava H.",
+        body: "I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter.",
+        img: "/assets/pic1.jpg",
         date: "Posted on August 19, 2023"
     },
+];
 
-]
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
 
-
-
-
-
-export default function OurCustomer() {
-
-
-
-    const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-
-        slidesToScroll: 2,
-        initialSlide: 0,
-        slidesToShow: 3,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        pauseOnHover: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
+const ReviewCard = ({
+    img,
+    username,
+    body,
+    date,
+}: {
+    img: string;
+    username: string;
+    body: string;
+    date: string;
+}) => {
     return (
-        <section className="mx-auto max-w-screen-xl my-24 overflow-hidden rounded-3xl">
-            <div className=" flex justify-between mx-6">
-                {/* Heading and Timer */}
-                <h2 className="text-[16px] capitalize  md:text-[44px] lg:w-[654px] w-[250px] font-extrabold leading-[48px] tracking-[4%]">
-                    Our Happy Customerse
-                </h2>
-                <div className="flex space-x-5">
-                    <button className="rounded-md font-medium">
-                        <FaArrowLeft /></button>
-                    <button className="rounded-md font-medium">
-                        <FaArrowRight />
-                    </button>
+        <figure
+
+            className={cn(
+                "relative w-96 cursor-pointer overflow-hidden rounded-xl border p-4",
+                // light styles
+                "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+                // dark styles
+                "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+            )}
+        >
+            <div className="flex flex-row items-center gap-2">
+                <img className="rounded-full" width="32" height="32" alt="" src={img} />
+                <div className="flex flex-col">
+                    <figcaption className="text-sm font-medium dark:text-white">
+
+                    </figcaption>
+                    <p className="text-xs font-medium dark:text-white/40">{username}</p>
+                    <span className="text-xs font-medium dark:text-white/40">{date}</span>
                 </div>
-                {/* Button */}
             </div>
-            <div className=" max-w-screen-2xl mx-auto overflow-hidden rounded-3xl gap-5 ">
-                <Slider {...settings} className="">
-                    {
-                        reviws.map((r,i) => (
+            <blockquote className="mt-2 text-sm">{body}</blockquote>
+        </figure>
+    );
+};
 
-                            <div key={i} className="md:w-[180px] w-[300] p-6 mx-auto rounded-2xl  h-[220px] border  border-black/20 my-8  md:space-y-2">
-                                <div className="flex">
-                                    <span className="w-[100px] h-[20px] flex text-[#FFAD33]">
-                                        <HiStar className="w-[20px] h-[20px]" />
-                                        <HiStar className="w-[20px] h-[20px]" />
-                                        <HiStar className="w-[20px] h-[20px]" />
-                                        <HiStar className="w-[20px] h-[20px]" />
-                                        <HiStar className="w-[20px] h-[20px]" />
-                                    </span>
-                                </div>
-                                <div className="flex">
-                                    <h2 className="font-bold ">{r.title}</h2>
-                                    <Image src={reviews} alt="Rating Vector" width={40} height={40} className="w-5 h-5" />
+export function MarqueeDemo() {
+    return (
+        <>
+         <h2 className="text-center capitalize py-8 text-[48px] text- font-bold leading-[48px] tracking-[4%]">
+         Our Happy Customerse
+            </h2>
+           
+            <div className="relative max-w-screen-xl mx-auto flex my-12 h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
 
-                                </div>
-                                <p className=" text-xs line-clamp-4">{r.content}</p>
-                                <p>{r.date}</p>
-                            </div>
-
-
-                        ))
-                    }
-                </Slider>
-
+                <Marquee pauseOnHover className="[--duration:20s]">
+                    {firstRow.map((review) => (
+                        <ReviewCard key={review.username} {...review} />
+                    ))}
+                </Marquee>
+                <Marquee reverse pauseOnHover className="[--duration:20s]">
+                    {secondRow.map((review) => (
+                        <ReviewCard key={review.username} {...review} />
+                    ))}
+                </Marquee>
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
             </div>
-
-        </section>
-    )
+        </>
+    );
 }

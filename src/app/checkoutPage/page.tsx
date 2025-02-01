@@ -4,7 +4,10 @@ import convertToSubcurrency from "@/lib/convertToSubcurrency"
 import { useState, useEffect, Suspense } from 'react'
 import { useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js'
 
-const CheckOutPage = ({ amount }: { amount: number }) => {
+interface Payment {
+    amount: number 
+}
+export default function CheckOutPage  ({ amount }: Payment)   {
     console.log(window.location.host)
 
     const myhost = window.location.host
@@ -80,4 +83,3 @@ const CheckOutPage = ({ amount }: { amount: number }) => {
     )
 }
 
-export default CheckOutPage

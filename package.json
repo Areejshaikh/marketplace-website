@@ -43,6 +43,7 @@
     "react-toastify": "^11.0.3",
     "redux-persist": "^6.0.0",
     "sanity": "^3.70.0",
+    "shipengine": "^1.0.7",
     "slick-carousel": "^1.8.1",
     "stripe": "^17.6.0",
     "styled-components": "^6.1.14",

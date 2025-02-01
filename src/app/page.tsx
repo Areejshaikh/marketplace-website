@@ -2,7 +2,7 @@ import Arrival from "@/components/arrival";
 import Browser from "@/components/browser";
 import Hero from "@/components/hero";
 import HeroButtom from "@/components/herobuttom";
-import OurCustomer from "@/components/reviews";
+import { MarqueeDemo } from "@/components/reviews";
 import TopSelling from "@/components/top-selling";
 import { Suspense } from "react";
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <TopSelling />
       </Suspense>
       <Browser /> 
-      <OurCustomer />
+      <MarqueeDemo/> 
     </div>
   )
 }

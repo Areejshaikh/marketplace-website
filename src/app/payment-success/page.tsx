@@ -21,7 +21,7 @@ const PaymentSuccess = ({ searchParams }: IParams) => {
       </div>
       <div className="text-center w-full my-24 bg-gray-300 p-12">
         <h1 className=" text-2xl font-semibold md:text-6xl pb-12">Thank you for purchasing $ {searchParams.amount}</h1>
-        <Link href={''} >
+        <Link href='/shippingRates' >
           <Button>GO TO Shipment</Button>
         </Link>
       </div>
