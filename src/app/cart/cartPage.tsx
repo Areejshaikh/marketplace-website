@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CiShoppingTag } from "react-icons/ci";
 import LeftSideCart from "@/components/leftSideCart";
 import { useAppSelector } from "../store/hooks";
+import { Button } from "@/components/ui/button";
 
 export default function CartPage() {
 
@@ -67,9 +68,9 @@ export default function CartPage() {
                             className={`rounded-full pl-6 w-full h-10
                                  bg-gray-200 placeholder:text-[12px] `}
                         />
-                        <button className="w-full md:w-38  inline-block 
+                        <Button className="w-full md:w-38  inline-block 
                         text-center bg-black hover:bg-black/80 transition-all text-white 
-                         rounded-full hover:animate-pulse">Apply</button>
+                         rounded-full hover:animate-pulse">Apply</Button>
                     </div>
 
 
