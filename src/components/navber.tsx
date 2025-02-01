@@ -50,7 +50,7 @@ const Navber = () => {
 
         <div className="navbar-end">
            
-            <Link href='/login'>
+            <Link href='/stripe-payment'>
             <button className="btn btn-ghost btn-circle">
               <div className="indicator">
                 <BsPerson className="h-6 w-6" />
