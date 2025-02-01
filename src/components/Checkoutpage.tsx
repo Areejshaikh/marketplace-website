@@ -1,13 +1,9 @@
 'use client'
-import convertToSubcurrency from "@/lib/convertToSubcurrency"
-
 import { useState, useEffect, Suspense } from 'react'
 import { useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js'
+import convertToSubcurrency from '@/lib/convertToSubcurrency'
 
-interface Payment {
-    amount: any;
-}
-export default function CheckOutPage  ({ amount }: Payment)   {
+const CheckoutPage = ({ amount }: { amount: number }) => {
     console.log(window.location.host)
 
     const myhost = window.location.host
@@ -17,7 +13,7 @@ export default function CheckOutPage  ({ amount }: Payment)   {
         URL = 'http://localhost:3000'
     }
     else {
-        URL = 'https://marketplace-website-shop-co.vercel.app/';
+        URL = '';
     }
 
     const stripe = useStripe()
@@ -76,10 +72,11 @@ export default function CheckOutPage  ({ amount }: Payment)   {
     }
 
     return (
-        <form onSubmit={handleSubmit} className='p-8 my-24'>
+        <form onSubmit={handleSubmit} className='p-8'>
             {clientSecret && <PaymentElement />}
             <button className='w-full bg-black text-white py-2 mt-5'>Pay Now</button>
         </form>
     )
 }
 
+export default CheckoutPage
