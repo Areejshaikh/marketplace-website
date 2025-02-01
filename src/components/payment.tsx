@@ -2,7 +2,7 @@
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import convertToSubcurrency from "@/lib/convertToSubcurrency";
-import CheckOutPage from "./checkoutpage";
+import CheckOutPage from "@/app/checkoutPage/page";
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
     throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined");

@@ -68,9 +68,7 @@ export default function CartPage() {
                             className={`rounded-full pl-6 w-full h-10
                                  bg-gray-200 placeholder:text-[12px] `}
                         />
-                        <Button className="w-full md:w-38  inline-block 
-                        text-center bg-black hover:bg-black/80 transition-all text-white 
-                         rounded-full hover:animate-pulse">Apply</Button>
+                        <Button >Apply</Button>
                     </div>
 
 
