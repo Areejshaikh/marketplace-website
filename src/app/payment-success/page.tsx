@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const PaymentSuccess = ({ searchParams }: { searchParams: { amount?: number } }) => {
+interface IParams {
+  searchParams: {
+      amount: number
+  }
+}
+const PaymentSuccess = ({ searchParams }: IParams) => {
   return (
     <div className="text-center max-w-screen-xl mx-auto my-24 bg-gray-300 p-12">
       <div className="breadcrumbs text-sm">
@@ -17,7 +22,7 @@ const PaymentSuccess = ({ searchParams }: { searchParams: { amount?: number } })
       </div>
       <div className="text-center w-full my-24 bg-gray-300 p-12">
         <h1 className="text-2xl font-semibold md:text-6xl pb-12">
-          Thank you for purchasing ${searchParams?.amount || 0}
+          Thank you for purchasing ${searchParams.amount}
         </h1>
         <Link href="/shippingRates">
           <Button>Go To Shipment</Button>
