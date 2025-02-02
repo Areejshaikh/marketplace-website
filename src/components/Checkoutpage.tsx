@@ -13,7 +13,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
         URL = 'http://localhost:3000'
     }
     else {
-        URL = '';
+        URL = 'https://marketplace-website-rbih.vercel.app/';
     }
 
     const stripe = useStripe()
