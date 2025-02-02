@@ -33,6 +33,7 @@ export type cart = {
     slug: string,
     uuid: string | undefined |number,
     rating:number
+    
 
 }
 

@@ -8,7 +8,7 @@ import { Product } from "@/components/utils/types";
 import SlugImages from "@/components/slugImage";
 import ProductInfo from "@/components/description";
 import { MarqueeDemoVertical } from "@/components/customer";
-// import RelatedProduct from "@/app/related-product/page";
+import RelatedProductsPage from "@/app/related-product/page";
 
 // Props type for ProductPageClient
 interface ProductPageClientProps {
@@ -146,7 +146,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                     
                 </div>
             </div>
-            {/* <RelatedProduct category={`${product.category}`} currentProductId={`${product._id}`} /> */}
+            <RelatedProductsPage/>
                    
 
                     {/* Product Info */}

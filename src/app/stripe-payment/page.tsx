@@ -15,7 +15,7 @@ const StripePayment = () => {
     const amount = 59.99
     return (
         <div>
-            <h1 className='text-6xl my-24 font-bold text-center'>Areej Zaheer has requested $ {amount}</h1>
+            <h1 className='text-3xl my-24 font-bold text-center'>Sign up </h1>
 
             <Elements
                 stripe={stripePromise}
