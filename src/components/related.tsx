@@ -7,8 +7,8 @@ import { HiStar } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
-import { products } from "@/utils/mock";
-import { Product } from "@/utils/types";
+import { products } from "./utils/mock";
+import { Product } from "./utils/types";
 
 interface RelatedProductProps {
   category: string;

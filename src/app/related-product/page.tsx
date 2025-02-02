@@ -1,4 +1,4 @@
-import RelatedProduct from "@/components/RelatedProduct";
+import RelatedProduct from "@/components/related";
 
 interface Props {
   searchParams: {
