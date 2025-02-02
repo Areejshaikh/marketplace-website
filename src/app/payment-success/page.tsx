@@ -2,11 +2,13 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 interface IParams {
-  searchParams: {
-      amount: number
-  }
+  searchParams: Record<string, string | undefined>;
 }
+
 const PaymentSuccess = ({ searchParams }: IParams) => {
+  // Convert amount safely to a number
+  const amount = searchParams.amount ? parseFloat(searchParams.amount) : 0;
+
   return (
     <div className="text-center max-w-screen-xl mx-auto my-24 bg-gray-300 p-12">
       <div className="breadcrumbs text-sm">
@@ -22,7 +24,7 @@ const PaymentSuccess = ({ searchParams }: IParams) => {
       </div>
       <div className="text-center w-full my-24 bg-gray-300 p-12">
         <h1 className="text-2xl font-semibold md:text-6xl pb-12">
-          Thank you for purchasing ${searchParams.amount}
+          Thank you for purchasing ${amount}
         </h1>
         <Link href="/shippingRates">
           <Button>Go To Shipment</Button>
