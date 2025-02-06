@@ -21,6 +21,7 @@ export default function CartPage() {
     const totalDiscount = calculateTotalDiscount(cartArray);
 
     return (
+
         <section id="cart" className="max-w-screen-xl mx-auto mt-24">
 
             <div className="breadcrumbs text-sm">
@@ -84,5 +85,6 @@ export default function CartPage() {
                 </div>
             </div>
         </section>
+
     )
 }

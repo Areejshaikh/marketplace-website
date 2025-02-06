@@ -59,15 +59,15 @@ export default function LeftSideCart() {
                                         {/* Increment Decrement Button */}
                                         <div className="absolute text-center flex justify-center bg-slate-200  w-[120px] md:w-[146px] h-[44px] items-center  rounded-full" >
                                             <button
-                                                onClick={() => dispatch(addCart(item))}
+                                               
                                                 className="hover:text-myred duration-600">
-                                                <FaPlus/>
+                                                <FaPlus onClick={() => dispatch(addCart(item.uuid))}/>
                                             </button>
                                             <span className="w-6 h-6 px-8">{item.quantity}</span>
                                             <button
-                                            onClick={() => dispatch(lessCart(item))}
+                                            
                                                 className="hover:text-myred duration-600">
-                                                <FaMinus/>
+                                                <FaMinus onClick={() => dispatch(lessCart(item))}/>
                                             </button>
                                         </div>
                                     </div>

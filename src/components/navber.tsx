@@ -6,6 +6,7 @@ import { BsCart3, BsPerson } from "react-icons/bs";
 import Link from "next/link";
 import { useAppSelector } from "@/app/store/hooks";
 import { ComboboxDemo } from "@/app/combobox";
+import LoginPage from "@/app/login/page";
 
 const Navber = () => {
   const cart = useAppSelector((state) => state.cart) 
@@ -50,10 +51,11 @@ const Navber = () => {
 
         <div className="navbar-end">
            
-            <Link href='/stripe-payment'>
+            <Link href='/login'>
             <button className="btn btn-ghost btn-circle">
               <div className="indicator">
                 <BsPerson className="h-6 w-6" />
+               
               </div>
             </button>
             </Link>

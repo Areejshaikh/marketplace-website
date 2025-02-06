@@ -63,7 +63,7 @@ export default function ArrivalProps() {
                 New Arrival
             </h2>
             <Slider {...settings} className="mx-auto ml-10">
-                {productslist.slice(5, 8).map((product) => {
+                {productslist.slice(2, 8).map((product) => {
                     return (
                         <div key={product._id}
                             className="mx-auto max-w-screen-2xl">
